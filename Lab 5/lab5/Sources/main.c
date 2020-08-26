@@ -1,10 +1,10 @@
 /* ###################################################################
 **     Filename    : main.c
-**     Project     : lab_4
+**     Project     : lab5
 **     Processor   : MK20DX128VLH5
 **     Version     : Driver 01.01
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2020-08-19, 00:06, # CodeGen: 0
+**     Date/Time   : 2020-08-26, 11:58, # CodeGen: 0
 **     Abstract    :
 **         Main module.
 **         This module contains user's application code.
@@ -30,42 +30,84 @@
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
 #include "Events.h"
-#include "RED_LED.h"
+#include "In.h"
 #include "BitIoLdd1.h"
-#include "GREEN_LED.h"
-#include "BitIoLdd2.h"
 #include "BLUE_LED.h"
-#include "BitIoLdd3.h"
+#include "BitIoLdd2.h"
 #include "AS1.h"
 #include "ASerialLdd1.h"
+#include "RED_PWM.h"
+#include "PwmLdd1.h"
+#include "TU1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-#include <string.h>
-#include "UART_PDD.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
 
+void part_1()
+{
+	  byte err;
+	  char c;
+
+	  for(;;)
+	  {
+
+		  if (In_GetVal()) //the input pin has been high
+			  BLUE_LED_ClrVal(); //turn BLUE LED on
+		  else
+			  BLUE_LED_SetVal(); //otherwise turn BLUE LED off
+
+		  do{
+		  		   err = AS1_RecvChar(&c); // component name = AS1
+		  	   } while(err != ERR_OK); // the received byte is in the variable c
+		  if (c== ' ')
+		  {
+			PORTC_PCR0 ^= 0b11; // set PTC0 pullup of resistor to be active
+
+		  }
+
+	//	  check if a space character is received from the keyboard over a serial port
+	//	  if that the case ....set PTC0 pullup resistor to be active
+	//	  PORTC_PCR0 = 0b11;
+	  }
+
+	}
+
+
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
-void send_string(const char *str)
-  {
-
-  	int i, len;
-  	len = strlen(str); // returns the number of chars in str
-  	byte err;
-  	for (i= 0; i< len; i++) {
-  		// send this character
-  		do {
-  			err = AS1_SendChar(str[i]);
-  		} while (err != ERR_OK);
-  	}
-  }
-
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
   /* Write your local variable definition here */
+	byte err;
+	char c;
+	int ratio;
+	for (;;){
+
+		do{
+			err = AS1_RecvChar(&c); // component name = AS1
+		} while(err != ERR_OK); // the received byte is in the variable c
+
+		//Adjust LED brightness
+
+		if (c == 'r' )
+			ratio += 10; // Increase brightness
+		else if (c== 'R')
+			ratio -= 10; // Decrease brightness
+		if (ratio > 255)
+					ratio =255;
+				else if (ratio < 0)
+					ratio = 0;
+		RED_PWM_SetRatio8(ratio);
+
+
+
+//			send_string("Program is starting\n\r");
+//			send_string("Red LED is on\n\r"); // Transmit a string
+//			RED_LED_NegVal();
+		}
 
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   PE_low_level_init();
@@ -74,48 +116,7 @@ int main(void)
   /* Write your code here */
   /* For example: for(;;) { } */
 
-  byte err;
-   char c;
 
-//   char d = 'a'; // transmit the letter a
-//   char e = 'x'; // transmit the letter x
-//   char f = 'g'; // transmit the letter g
-//   char h = 'b'; // transmit the letter b
-
-
-   for (;;){
-
-	   do{
-		   err = AS1_RecvChar(&c); // component name = AS1
-	   } while(err != ERR_OK); // the received byte is in the variable c
-
-	   //Turn red LED on
-	   if (c == 'r' || c == 'R')
-	   {
-		   // 	  RED_LED_ClrVal(); //Turn Red LED on
-		   send_string("Program is starting\n\r");
-		   send_string("Red LED is on\n\r"); // Transmit a string
-		   RED_LED_NegVal();
-	   }
-	   //Turn green LED on
-	   else if (c == 'g' || c == 'G')
-	   {
-		   GREEN_LED_NegVal();
-		   send_string("Green LED is on\n\r");
-	   }
-	   //Turn Blue LED on
-	   else if (c == 'b' || c == 'B')
-	   {
-		   BLUE_LED_NegVal();
-		   send_string("Blue LED is on\n\r");
-	   }
-	   //   Turn all LED off
-	   else {
-		   send_string("Invalid input\n\r");
-
-	   }
-
-   }
 
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

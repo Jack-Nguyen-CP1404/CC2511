@@ -24,7 +24,7 @@
       <File Name="Static_Code/PDD/MCG_PDD.h" FileDate="2020-08-19, 00:06:46" FileAge="1597759606273" FileType="1048576" />
       <File Name="Static_Code/PDD/CRC_PDD.h" FileDate="2020-08-19, 00:06:46" FileAge="1597759606242" FileType="1048576" />
       <File Name="Documentation/doxygen/ASerialLdd1_component.txt" FileDate="2020-08-19, 10:50:27" FileAge="1597798227890" FileType="45637" CompNumb="12" />
-      <File Name="Sources/main.c" FileDate="2020-08-21, 09:34:09" FileAge="1597966449367" FileType="128" />
+      <File Name="Sources/main.c" FileDate="2020-08-26, 15:32:50" FileAge="1598419970523" FileType="128" />
       <File Name="Project_Settings/Startup_Code/startup.c" FileDate="2020-08-19, 00:06:46" FileAge="1597759606058" FileType="16384" CompNumb="4" />
       <File Name="Static_Code/PDD/OSC_PDD.h" FileDate="2020-08-19, 00:06:46" FileAge="1597759606275" FileType="1048576" />
       <File Name="Static_Code/PDD/USB_PDD.h" FileDate="2020-08-19, 00:06:46" FileAge="1597759606305" FileType="1048576" />
@@ -84,7 +84,7 @@
       <File Name="Static_Code/PDD/PIT_PDD.h" FileDate="2020-08-19, 00:06:46" FileAge="1597759606280" FileType="1048576" />
       <File Name="Documentation/doxygen/BitIoLdd2_component.txt" FileDate="2020-08-19, 12:15:20" FileAge="1597803320944" FileType="45637" CompNumb="8" />
       <File Name="Documentation/doxygen/lab_4_project.txt" FileDate="2020-08-21, 09:34:17" FileAge="1597966457295" FileType="45637" CompNumb="4" />
-      <File Name="Documentation/lab_4_SIGNALS.txt" FileDate="2020-08-21, 09:34:17" FileAge="1597966457357" FileType="3072" />
+      <File Name="Documentation/lab_4_SIGNALS.txt" FileDate="2020-08-26, 15:32:55" FileAge="1598419975010" FileType="3072" />
       <File Name="Generated_Code/BLUE_LED.h" FileDate="2020-08-19, 12:15:21" FileAge="1597803321016" FileType="45637" CompNumb="13" />
       <File Name="Static_Code/PDD/I2C_PDD.h" FileDate="2020-08-19, 00:06:46" FileAge="1597759606267" FileType="1048576" />
       <File Name="Generated_Code/BLUE_LED.c" FileDate="2020-08-19, 12:15:21" FileAge="1597803321026" FileType="45637" CompNumb="13" />
@@ -95,5 +95,5 @@
       <File Name="Generated_Code/Cpu.c" FileDate="2020-08-21, 09:34:17" FileAge="1597966457284" FileType="45637" CompNumb="4" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>8</CodeGenReference>
+  <CodeGenReference>9</CodeGenReference>
 </CodeGenerationInfo>
