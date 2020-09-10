@@ -1,0 +1,69 @@
+byte err;
+char d;
+void part1()
+{
+for (;;)
+{
+	  if (In_GetVal()) // the input pin has been high
+		  BLUE_LED_ClrVal();
+	  else
+		  BLUE_LED_SetVal();
+}
+
+		  PORTC_PCR0 ^= 0b11;
+
+
+
+} 
+ byte err;
+  char c;
+  int ratio_red = 0;
+  int ratio_green = 0;
+
+  for (;;){
+
+	  do{
+		  err = AS1_RecvChar(&c); // component name = AS1
+	  } while(err != ERR_OK); // the received byte is in the variable c
+
+	  //Adjust LED brightness
+
+	  if (c == 'r' )
+	  {
+		  ratio_red += 10; // Increase brightness
+		  send_string("Red_LED brightness is increasing\n\r"); // Transmit a string
+	  }
+	  else if (c== 'R')
+	  {
+		  ratio_red -= 10; // Decrease brightness
+		  send_string("Red_LED brightness is decreasing\n\r"); // Transmit a string
+
+	  }
+	  else if (c== 'g')
+	 	  {
+	 		  ratio_green += 10; // Decrease brightness
+	 		  send_string("Green_LED brightness is decreasing\n\r"); // Transmit a string
+
+	 	  }
+	  else if (c== 'G')
+	 	  {
+	 		  ratio_green -= 10; // Decrease brightness
+	 		  send_string("Green_LED brightness is decreasing\n\r"); // Transmit a string
+
+	 	  }
+	  else if (c== ' ')
+		  part1();
+
+	  if (ratio_red > 255)
+		  ratio_red = 0;
+	  else if (ratio_red < 0)
+		  ratio_red = 255;
+	  else if(ratio_green >255)
+		  ratio_green = 0;
+	  else if (ratio_green <0)
+		  ratio_green = 255;
+
+	  RED_PWM_SetRatio8(ratio_red);
+	  GREEN_PWM_SetRatio8(ratio_green);
+
+  }
