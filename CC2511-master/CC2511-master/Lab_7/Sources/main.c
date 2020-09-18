@@ -296,8 +296,8 @@ int main(void)
 			else if (0 == strcmp((char *) buffer, "off"))
 			 {
 				// buffer contains stop
-				RED_PWM_SetRatio8(255);
-				GREEN_PWM_SetRatio8(255);
+				RED_PWM_SetRatio8(0);
+				GREEN_PWM_SetRatio8(0);
 				BLUE_PWM_SetRatio8(0);
 				val = 0;
 
