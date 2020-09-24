@@ -41,12 +41,12 @@
 <stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="${cross_prefix}gdb${cross_suffix}"/>
 <booleanAttribute key="org.eclipse.cdt.dsf.gdb.UPDATE_THREADLIST_ON_SUSPEND" value="false"/>
 <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/lab_8.1.elf"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="lab_8.1"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/lab_9_RX.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="lab_9_RX"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value=""/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/lab_8.1"/>
+<listEntry value="/lab_9_RX"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>

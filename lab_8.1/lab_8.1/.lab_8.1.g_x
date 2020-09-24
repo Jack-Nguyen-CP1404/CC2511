@@ -34,7 +34,7 @@
       <File Name="Static_Code/PDD/OSC_PDD.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035751" FileType="1048576" />
       <File Name="Documentation/lab_8.1.txt" FileDate="2020-09-18, 09:59:54" FileAge="1600387194361" FileType="3072" />
       <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2020-09-15, 16:23:55" FileAge="1600151035836" FileType="45637" CompNumb="4" />
-      <File Name="Sources/main.c" FileDate="2020-09-18, 10:25:19" FileAge="1600388719379" FileType="128" />
+      <File Name="Sources/main.c" FileDate="2020-09-22, 16:57:05" FileAge="1600757825034" FileType="128" />
       <File Name="Generated_Code/Term1.h" FileDate="2020-09-18, 09:55:00" FileAge="1600386900048" FileType="45637" CompNumb="5" />
       <File Name="ProjectInfo.xml" FileDate="2020-09-15, 19:56:04" FileAge="1600163764276" FileType="45637" />
       <File Name="Generated_Code/BLUE_PWM.h" FileDate="2020-09-15, 19:56:03" FileAge="1600163763872" FileType="45637" CompNumb="16" />
@@ -80,25 +80,25 @@
       <File Name="Static_Code/PDD/PDB_PDD.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035754" FileType="1048576" />
       <File Name="Static_Code/PDD/SysTick_PDD.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035784" FileType="1048576" />
       <File Name="Documentation/doxygen/lab_8.1_project.txt" FileDate="2020-09-15, 19:56:03" FileAge="1600163763957" FileType="45637" CompNumb="4" />
-      <File Name="Documentation/lab_8.1_SIGNALS.txt" FileDate="2020-09-18, 10:25:35" FileAge="1600388735140" FileType="3072" />
+      <File Name="Documentation/lab_8.1_SIGNALS.txt" FileDate="2020-09-22, 16:57:05" FileAge="1600757825171" FileType="3072" />
       <File Name="Static_Code/PDD/PDD_Types.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035687" FileType="1048576" CompNumb="4" />
       <File Name="Generated_Code/PE_LDD.h" FileDate="2020-09-15, 19:56:03" FileAge="1600163763972" FileType="45637" CompNumb="4" />
       <File Name="Documentation/doxygen/RoutingReport_component.txt" FileDate="2020-09-15, 16:23:55" FileAge="1600151035839" FileType="45637" CompNumb="4" />
       <File Name="Documentation/doxygen/TU1_component.txt" FileDate="2020-09-15, 19:56:03" FileAge="1600163763919" FileType="45637" CompNumb="12" />
       <File Name="Generated_Code/PE_LDD.c" FileDate="2020-09-15, 19:56:03" FileAge="1600163763965" FileType="45637" CompNumb="4" />
-      <File Name="Sources/Events.h" FileDate="2020-09-15, 19:56:03" FileAge="1600163763986" FileType="131328" />
       <File Name="Documentation/doxygen/PwmLdd2_component.txt" FileDate="2020-09-15, 19:56:03" FileAge="1600163763876" FileType="45637" CompNumb="17" />
+      <File Name="Sources/Events.h" FileDate="2020-09-15, 19:56:03" FileAge="1600163763986" FileType="131328" />
       <File Name="Sources/Events.c" FileDate="2020-09-15, 16:27:39" FileAge="1600151259665" FileType="131328" />
       <File Name="Static_Code/PDD/USBDCD_PDD.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035792" FileType="1048576" />
       <File Name="Static_Code/IO_Map/MK20D5.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035680" FileType="1048576" CompNumb="4" />
       <File Name="Static_Code/PDD/I2C_PDD.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035739" FileType="1048576" />
       <File Name="Static_Code/PDD/PIT_PDD.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035758" FileType="1048576" />
-      <File Name="Project_Settings/Startup_Code/startup.c" FileDate="2020-09-15, 16:23:55" FileAge="1600151035462" FileType="16384" CompNumb="4" />
-      <File Name="Generated_Code/PE_Types.h" FileDate="2020-09-15, 19:56:03" FileAge="1600163763934" FileType="45637" />
       <File Name="Static_Code/PDD/WDOG_PDD.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035804" FileType="1048576" />
-      <File Name="Generated_Code/RED_PWM.h" FileDate="2020-09-18, 09:59:53" FileAge="1600387193250" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2020-09-15, 19:56:03" FileAge="1600163763934" FileType="45637" />
+      <File Name="Project_Settings/Startup_Code/startup.c" FileDate="2020-09-15, 16:23:55" FileAge="1600151035462" FileType="16384" CompNumb="4" />
       <File Name="Static_Code/PDD/RTC_PDD.h" FileDate="2020-09-15, 16:23:55" FileAge="1600151035767" FileType="1048576" />
+      <File Name="Generated_Code/RED_PWM.h" FileDate="2020-09-18, 09:59:53" FileAge="1600387193250" FileType="45637" CompNumb="10" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>11</CodeGenReference>
+  <CodeGenReference>12</CodeGenReference>
 </CodeGenerationInfo>
