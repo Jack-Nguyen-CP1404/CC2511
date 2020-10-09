@@ -1,0 +1,107 @@
+/**
+ * CC2511 Lab 10
+ */
+
+	.text 			/* The "text" section of the executable is where code is placed. */
+	.align	2 		/* Make sure the starting address is a multiple of 2. */
+	.global	main 	/* Declare "main" as a global symbol (callable from other files). */
+  .syntax unified /* Enable Thumb2 instruction set support */
+
+/* Main function */
+main:
+	push {lr}  /* The return address is in the "link register" (lr). Preserve it by pushing it to the stack. */
+
+	/* Write your code here */
+	// we want to turn on ibe LED on/off with delay
+	// Enable the clock for the port control module
+	// SIM_SCGC5 |= 0x3e00;
+	//Load sim SCGC5 adress into r1
+	//mov r1 with 4004_8038h
+	movw r1, #0x8038
+	movt r1, #0x4004
+	// load 4004_8038h
+	//ldr r1, = 4004_8038h
+	// store the value that we need to write to SIM_CSGC5 in r
+	ldr r2, =0x3e00;
+	// write the value in r2 to the memory address that r1 point to
+	str r2, [r1]
+
+	// Select the GPIO mode for the green LED
+	//PORTD_PCR4 = 0x100
+	ldr r1, =0x4004C010 //Load the address
+	ldr r2, =0x100 // PORTD_CR4 = 0x100
+	str r2, [r1]
+
+	//Select PTD4 to output for green LED
+	//GPIOD_PDDR = (1 << 4)
+	.equ GPIOD_PDDR, 0x400FF0D4
+	ldr r1, =GPIOD_PDDR
+	ldr r2, =0x10000
+	str r2, [r1]
+
+	//Turn green LED off
+	//GPIOD_PDOR = 0x10000
+	.equ GPIOD_PDOR, 0x400FF0C0
+	ldr r1, =GPIOD_PDOR
+	ldr r2, =0x10000 //Set GPIOD_PDOR = (0<<4);
+	str r2, [r1]
+
+
+	// Select the GPIO mode for the blue LED
+	ldr r1, =0x40049008 //Load the address
+	ldr r2, = 0x100 // PORTA_PCR2 = 0x100
+	str r2, [r1]
+
+	//Select PTD to output for blue LED
+	//GPIOA_PDDR = (1 << 2)
+	.equ GPIOA_PDDR, 0x400FF014
+	ldr r1, =GPIOA_PDDR
+	ldr r2, =0x100
+	str r2, [r1]
+
+	//Turn Blue LED off
+	//GPIOA_PDOR = (B<<2)
+	.equ GPIOA_PDOR, 0x400FF000
+	ldr r1, =GPIOA_PDOR
+	ldr r2, =0x100
+	str r2, [r1]
+
+	// Select GPIO mode for the red LED pin PTC3
+	//Set the GPIO mode for the red LED by doing the following
+	// PORTC_PCR3 = 0x100;
+	.equ PORTC_PCR3, 0x4004B00C
+	ldr r1, =PORTC_PCR3
+	ldr r2, =0x100
+	str r2, [r1]
+
+	// Write 0s into their PCR
+
+	// Select output data direction for the red LED
+	// GPIOC_PDDR = (1 << 3); // set PTC3 to output
+	.equ GPIOC_PDDR, 0x400FF094
+	ldr r1, =GPIOC_PDDR
+	ldr r2, =0x1000
+	str r2, [r1]
+
+	// Set the data output register to zero and one to turn it on or off
+	.equ GPIOC_PDOR, 0x400FF080
+	ldr r1, =GPIOC_PDOR
+	
+
+main_loop:
+	// Turn the red LED on
+	// GPIOC_PDOR = 0;
+	ldr r2, =0 // Write all zeros to the register to turn the LED on
+	str r2, [r1]
+
+	// Delay for a while
+
+	// Turn the red LED off
+
+	// delay for a while
+	b main_loop
+
+
+
+
+	pop {pc}  /* Return from this function, by popping the return address into the program counter (pc) */
